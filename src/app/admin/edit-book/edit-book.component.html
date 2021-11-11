@@ -1,0 +1,62 @@
+ <app-navbar></app-navbar>
+
+
+
+      <!-- EDIT BOOK CODE STARTS -->
+      <div class="container" style="max-width: 500px;">
+        <h3 class="mb-3 mt-5 text-center">EDIT BOOK</h3>
+      
+        <div class="form-group">
+          <input type="number" [(ngModel)]="editbook.BookId" class="form-control" placeholder="Book Id">
+        </div>
+    
+        <div class="form-group">
+            <input type="number" [(ngModel)]="editbook.CategoryId" class="form-control" placeholder="Category Id">
+          </div>
+      
+        <div class="form-group">
+          <input type="text" [(ngModel)]="editbook.Title" class="form-control" placeholder="Book Title">
+        </div>
+        <div class="form-group">
+            <input type="number" [(ngModel)]="editbook.ISBN" class="form-control" placeholder="ISBN">
+          </div>
+          <div class="form-group">
+        <input type="date" [(ngModel)]="editbook.PublicationYear" class="form-control" placeholder="Publish year">
+          </div>
+          <div class="form-group">
+            <input type="number" [(ngModel)]="editbook.Price" class="form-control" placeholder="price">
+          </div>
+    
+    
+        <div class="form-group">
+          <input type="text" [(ngModel)]="editbook.Description" class="form-control" placeholder="Description">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="status">Status</label>
+          <select id="status" [(ngModel)]="editbook.Status" class="form-control">
+           
+            <option>visible</option>
+            <option>not visible</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="number" [(ngModel)]="editbook.Position" class="form-control" placeholder="Position">
+        </div>
+    
+        <div class="form-group">
+          <label for="exampleFormControlFile1">select image</label>
+          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+    
+        <div class="form-group">
+    
+    <button class="btn btn-success btn-lg btn-block"  (click)="editBook(editbook.BookId,editBook)" >Edit Book</button>
+          </div>
+    </div>
+    
+
+
+<!-- EDIT BOOK CODE ENDS -->
+    
+    <!-- /#page-content-wrapper -->
+  

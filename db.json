@@ -1,0 +1,36 @@
+{
+  "cart": [
+    {
+      "product": 101,
+      "userEmail": "\"t@gmail.com\"",
+      "id": 1
+    },
+    {
+      "product": 102,
+      "userEmail": "\"t@gmail.com\"",
+      "id": 2
+    },
+    {
+      "product": 105,
+      "userEmail": "\"t@gmail.com\"",
+      "id": 3
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

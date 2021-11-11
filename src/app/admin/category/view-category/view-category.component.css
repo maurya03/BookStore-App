@@ -1,0 +1,9 @@
+.custom{
+    border-style: outset;
+    margin-top: 50px;
+    background-color: rgb(127, 131, 125);
+}
+.main{
+    margin: auto;
+    background-color: lightgray;
+}

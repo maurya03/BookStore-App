@@ -1,0 +1,86 @@
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper"  [ngClass]="status ? 'hide' : 'show'">
+    <div class="sidebar-heading" routerLink="/admin" >Admin </div>
+    <div class="list-group list-group-flush">
+             
+      <a class="list-group-item list-group-item-action bg-light" routerLink="/admin">Dashboard</a>
+      <a class="list-group-item list-group-item-action bg-light" routerLink="/manage-category">Add Category</a>
+      <a href="#" class="list-group-item list-group-item-action bg-light" routerLink="/add-book">Add Book</a>
+      <a  class="list-group-item list-group-item-action bg-light" routerLink="/manage-user">Manage User</a>
+      <a  *ngIf="isAdminLoggedIn" class="list-group-item list-group-item-action bg-light" (click)="SignOut()">Sign out</a>
+      <a  *ngIf="!isAdminLoggedIn" class="list-group-item list-group-item-action bg-light" (click)="SignIn()">Sign In</a>
+      <!-- <a href="#" class="list-group-item list-group-item-action bg-light">Status</a> -->
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
+     
+      <div class="container-fluid">
+        <button class="btn btn-info" (click)="clickEvent()">More Options</button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" routerLink="/admin">Home</a>
+            </li>
+            
+            
+          </ul>
+          
+          <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+      </div>
+    </nav>
+<!-- EDIT CATEGORY CODE STARTS -->
+
+<div class="container" style="max-width: 500px;">
+    <h3 class="mb-3 mt-5 text-center">EDIT CATEGORY</h3>
+  
+    <div class="form-group">
+      <input type="number" [(ngModel)]="addcategory.CategoryId" class="form-control" placeholder="Id">
+    </div>
+  
+    <div class="form-group">
+      <input type="text" [(ngModel)]="addcategory.CategoryName" class="form-control" placeholder="Category Name">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="addcategory.Description" class="form-control" placeholder="Description">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="status">Status</label>
+      <select id="status" [(ngModel)]="addcategory.Status" class="form-control">
+       
+        <option>visible</option>
+        <option>not visible</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <input type="number" [(ngModel)]="addcategory.Position" class="form-control" placeholder="Position">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlFile1">select image</label>
+      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    </div>
+
+    <div class="form-group">
+
+<button class="btn btn-success btn-lg btn-block"  (click)="editCategory()" >Edit Category</button>
+      </div>
+  
+    
+</div>
+
+
+<!-- EDIT CATEGORY CODE ENDS -->
+    </div>
+    <!-- /#page-content-wrapper -->
+  </div>

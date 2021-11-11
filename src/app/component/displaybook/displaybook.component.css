@@ -1,0 +1,33 @@
+.list-group-item{
+    cursor: pointer;
+}
+
+li:hover{
+    background-color: lightgray;
+    transition:1s;
+}
+
+#card:hover {
+    transform: scale(1.02) perspective(0px);
+    box-shadow: 0 10px 10px rgba(255,0,0,.7);
+  }
+
+  .btn {
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 2px;
+    width:45%; 
+    /* margin-left: 10px;   */
+    margin-right: 10px;  
+}
+/* .btn-space {
+    margin-right: 51px;
+} */
+
+.custom{
+    font-size: small;
+}
+ 
+
+
+

@@ -1,0 +1,11 @@
+.main{
+    border-style: outset;
+    margin-top: 30px;
+    background-color: lightslategray;
+}
+
+
+.custom{
+    margin: auto;
+    background-color: lightgrey;
+}

@@ -1,0 +1,103 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Admin: Manage User</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/admin">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Add User</a>
+        </li>
+        <div class="dropdown">
+            <button class="dropbtn">Coupon Details</button>
+            <div class="dropdown-content">
+              <a href="#">Coupon 1 &nbsp;<span><button>Details</button></span></a> 
+              <a href="#">coupon 2  &nbsp;<span><button>Details</button></span></a> 
+              <a href="#">coupon 3  &nbsp;<span><button>Details</button></span></a> 
+            </div>
+          </div>
+        
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>  -->
+
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper" [ngClass]="status ? 'hide' : 'show'">
+    <div class="sidebar-heading" routerLink="/admin">Admin </div>
+    <div class="list-group list-group-flush">
+
+      <a class="list-group-item list-group-item-action bg-light" routerLink="/admin">Dashboard</a>
+      <a class="list-group-item list-group-item-action bg-light" routerLink="/manage-category">Add Category</a>
+      <a href="#" class="list-group-item list-group-item-action bg-light" routerLink="/add-book">Add Book</a>
+      <a class="list-group-item list-group-item-action bg-light" routerLink="/manage-user">Manage User</a>
+      <a *ngIf="isAdminLoggedIn" class="list-group-item list-group-item-action bg-light" (click)="SignOut()">Sign
+        out</a>
+      <a *ngIf="!isAdminLoggedIn" class="list-group-item list-group-item-action bg-light" (click)="SignIn()">Sign In</a>
+      <!-- <a href="#" class="list-group-item list-group-item-action bg-light">Status</a> -->
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
+
+      <div class="container-fluid">
+        <button class="btn btn-info" (click)="clickEvent()">More Options</button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" routerLink="/admin">Home</a>
+            </li>
+          </ul>
+
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="row">
+
+      <div class="col-lg-12">
+        <table class="table table-bordered extra">
+          <thead class="thead-dark">
+            <tr>
+              <th>User Name</th>
+              <th>User Details</th>
+              <th>Mobile</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of Users">
+              <td>{{user.userName}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.mobile}}</td>
+              <td>
+                <button class="btn btn-primary" (click)="onButtonClick(user)">View</button>&nbsp;
+                <button class="btn btn-secondary" (click)="onButtonClick2(user)">Edit</button>&nbsp;
+                <button class="btn btn-danger" (click)="delete(user.userId)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="button" class="btn btn-success btn-md" (click)="onButtonClick3()">Add User</button> 
+      </div>
+
+    </div>

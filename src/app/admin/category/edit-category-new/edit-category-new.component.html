@@ -1,0 +1,35 @@
+<div class="container custom" style="max-width: 500px;">
+    <h3 class="mb-3 mt-5 text-center">Update Category</h3>
+  
+    <div class="form-group">
+      <span>CatId:</span> <input type="number" [(ngModel)]="userObj.catId" class="form-control" placeholder="Id">
+    </div>
+  
+    <div class="form-group">
+        <span>CatName:</span>  <input type="text" [(ngModel)]="userObj.catName" class="form-control" placeholder="Name">
+    </div>
+  
+    <div class="form-group">
+        <span>Description:</span>  <input type="email" [(ngModel)]="userObj.description" class="form-control" placeholder="Description">
+    </div>
+
+    <div class="form-group">
+        <span>Image:</span>  <input type="email" [(ngModel)]="userObj.imageName" class="form-control" placeholder="ImageName">
+      </div>
+
+      <div class="form-group">
+        <span>Status:</span>  <input type="email" [(ngModel)]="userObj.catStatus" class="form-control" placeholder="catStatus">
+      </div>
+
+      <div class="form-group">
+        <span>Position:</span>  <input type="email" [(ngModel)]="userObj.position" class="form-control" placeholder="Position">
+      </div>
+
+      <div class="form-group">
+        <span>CreatedAt:</span> <input type="email" [(ngModel)]="userObj.createdAt" class="form-control" placeholder="CreatedAt">
+      </div>
+  
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="updateUser(userObj.id, userObj)">Update User</button>
+    </div>  
+</div>

@@ -1,0 +1,43 @@
+<!-- <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="assets\abdul-kalam.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div> -->
+
+   
+
+
+
+<div class="row">
+  <div class="col-sm-3" *ngFor="let category of categories">
+    <div class="card custom" style="width: 25rem;">
+      <img src="assets\bookimage\{{category.imageName}}.jpg" class="card-img-top" alt="...">
+      
+      <div class="card-body">
+        <h5 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 70ch;" class="card-title">{{category.catName}}</h5>
+        <p style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 70ch;" class="card-text">{{category.description}}</p>
+        <p class="card-text">{{category.createdAt}}</p>
+
+        <!-- <a href="#" class="btn btn-dark" id = "editbutton">Edit</a> -->
+        <!-- Button trigger modal -->
+        
+        <button type="button" class="btn btn-primary" (click)="onButtonClick2(category)">
+          edit
+        </button>&nbsp;
+
+        <button type="button" class="btn btn-primary" (click)="delete(category.catId)">
+          delete
+        </button>&nbsp;
+
+        <button type="button" class="btn btn-primary" (click)="onButtonClick(category)">
+          view
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>

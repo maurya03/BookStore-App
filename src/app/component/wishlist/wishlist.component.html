@@ -1,0 +1,38 @@
+<div id="card" class="col-lg-8 card shadow-lg"><h1 class="text-center">Products</h1>
+    <div class="row">
+        <div class="col-sm-4" *ngFor="let book of books">
+    <div id="card" class="card shadow-lg">
+        <div class="flip-card" style=" padding: 5px 5px 5px 5px ;" >
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img  style="width:350px; height: 400px" src="assets\bookimage\{{book.imageName}}.jpg" class= "card-img-top" alt="...">
+                </div>
+            
+            <div class="flip-card-back">
+                <h1 style="text-align: center;">Description</h1>
+                <ul>
+                    <li>ISBN: {{ book.ISBN }}</li> 
+                    <li>Publication Year: {{ book.publicationYear }}</li>
+                    <li>Book Summary: {{ book.Description}}</li>
+                </ul>
+            
+          </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">{{ book.bookId }}{{ book.title }}</h5>
+            <p class=" h3 card-text card-text">{{ book.author }}</p>
+            <p class=" h3 card-text card-text">{{ book.Price }}</p>
+                                 <!-- <p class=" h3 card-text card-text">{{ product.price | currency:'INR'}} &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: grey; font-size:small"><del>MRP:{{ product.mrp | currency:'INR' }}</del></span></p> -->
+            
+            <div style="margin: auto;">
+                <a  class="btn btn-success" (click)=add(book)>Move To Bag</a>
+                 <a class="btn btn-warning" (click)=remove(book)>Remove</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+</div>
+</div>

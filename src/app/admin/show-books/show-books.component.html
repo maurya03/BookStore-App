@@ -1,0 +1,62 @@
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper"  [ngClass]="status ? 'hide' : 'show'">
+    <div class="sidebar-heading" routerLink="/admin" >Admin </div>
+    <div class="list-group list-group-flush">
+             
+      <a class="list-group-item list-group-item-action bg-light" routerLink="/admin">Dashboard</a>
+      <a class="list-group-item list-group-item-action bg-light" routerLink="/manage-category">Add Category</a>
+      <a href="#" class="list-group-item list-group-item-action bg-light" routerLink="/add-book">Add Book</a>
+      <a  class="list-group-item list-group-item-action bg-light" routerLink="/manage-user">Manage User</a>
+      <a  *ngIf="isAdminLoggedIn" class="list-group-item list-group-item-action bg-light" (click)="SignOut()">Sign out</a>
+      <a  *ngIf="!isAdminLoggedIn" class="list-group-item list-group-item-action bg-light" (click)="SignIn()">Sign In</a>
+      <!-- <a href="#" class="list-group-item list-group-item-action bg-light">Status</a> -->
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark bg-dark">
+     
+      <div class="container-fluid">
+        <button class="btn btn-info" (click)="clickEvent()">More Options</button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" routerLink="/admin">Home</a>
+            </li>
+            
+            
+          </ul>
+          
+          <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+      </div>
+    </nav>
+
+      <!-- SHOW CATEGORY CODE STARTS -->
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="assets\bookimage\beautifulBoys.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">BOOK</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <!-- <a href="#" class="btn btn-dark" id = "editbutton">Edit</a> -->
+             <!-- Button trigger modal -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- show books code ends -->
+    </div>
+    <!-- /#page-content-wrapper -->
+  </div>
+  <!-- /#wrapper -->
+
